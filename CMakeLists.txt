@@ -10,4 +10,7 @@ add_executable(c_study
         .idea/modules.xml
         .idea/vcs.xml
         .idea/workspace.xml
-        Main.cpp)
+        Main.cpp
+        array/ArrayDemo.h
+        array/ArrayDemo.cpp
+        )

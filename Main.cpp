@@ -14,9 +14,11 @@ int main() {
 //    arrayDemo->printArray();
 //    ArrayDemo arrayDemo(0);
 //    arrayDemo.printArray();
-    ArrayDemo arrayDemo;
-    arrayDemo.printArray();
 
+
+    ArrayDemo arrayDemo;
+//    arrayDemo.printArray();
+    arrayDemo.feibonaqie(20);
 
     return 0;
 }

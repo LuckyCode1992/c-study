@@ -10,9 +10,13 @@ using namespace std;
 
 int main() {
     cout << "hello" << endl;
-    ArrayDemo *arrayDemo = new ArrayDemo();
+//    ArrayDemo *arrayDemo = new ArrayDemo();
+//    arrayDemo->printArray();
 //    ArrayDemo arrayDemo(0);
-    arrayDemo->printArray();
+//    arrayDemo.printArray();
+    ArrayDemo arrayDemo;
+    arrayDemo.printArray();
+
 
     return 0;
 }

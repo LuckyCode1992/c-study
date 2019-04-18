@@ -55,3 +55,11 @@ void ArrayDemo::feibonaqie(int i) {
     }
 }
 
+void ArrayDemo::rowSum(int a[][4], int nRow) {
+    for (int i = 0; i < nRow; i++) {
+        for (int j = 1; j < 4; j++) {
+            a[i][0] += a[i][j];
+        }
+    }
+}
+

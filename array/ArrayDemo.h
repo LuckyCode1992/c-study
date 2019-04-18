@@ -44,11 +44,17 @@ public:
     int c[5][3];
 
 
-
-
     void printArray();
 
     //斐波那契数列
     void feibonaqie(int i);
+
+    //求数组一行和
+    /**
+     * 数组 变量，其实是指向数组的内存地址
+     * @param a
+     * @param nRow
+     */
+    void rowSum(int a[][4], int nRow);
 };
 

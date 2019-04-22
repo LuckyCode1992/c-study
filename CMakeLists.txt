@@ -13,4 +13,4 @@ add_executable(c_study
         Main.cpp
         array/ArrayDemo.h
         array/ArrayDemo.cpp
-        pointer/PointerDemo.cpp pointer/PointerDemo.h)
+        pointer/PointerDemo.cpp pointer/PointerDemo.h comprehensive_case/SavingsAccount.cpp comprehensive_case/SavingsAccount.h)

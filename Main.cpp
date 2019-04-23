@@ -16,6 +16,17 @@ void swap(int &a, int &b) {
     b = temp;
 }
 
+/**
+ * 数组的长度获取方式
+ * @tparam T
+ * @param n
+ * @return
+ */
+template<class T>
+int getArrayLenth(T &n) {
+    return sizeof(n) / sizeof(n[0]);
+}
+
 int main() {
     cout << "hello" << endl;
 
@@ -67,37 +78,62 @@ int main() {
 //    //输出各个账户信息
 //    sa0.show();	cout << endl;
 //    sa1.show();	cout << endl;
-    int n[3][3];
-    cout << "输入9个整数作为矩阵元素" << endl;
-    for (int i = 0; i < 3; i++) {
+
+
+//    int n[3][3];
+//    cout << "输入9个整数作为矩阵元素" << endl;
+//    for (int i = 0; i < 3; i++) {
+//        for (int j = 0; j < 3; j++) {
+//            cin >> n[i][j];
+//        }
+//    }
+//    cout << "初始矩阵" << endl;
+//    for (int i = 0; i < 3; i++) {
+//        for (int j = 0; j < 3; j++) {
+//            cout << n[i][j] << " ";
+//        }
+//        cout << endl;
+//    }
+//
+//    cout << "转换矩阵" << endl;
+//    for (int i = 0; i < 3; i++) {
+//        for (int j = 0; j < i; j++) {
+//            swap(n[i][j], n[j][i]);
+//        }
+//
+//    }
+//
+//    cout << "转换后：" << endl;
+//
+//    for (int i = 0; i < 3; i++) {
+//        for (int j = 0; j < 3; j++) {
+//            cout << n[i][j] << " ";
+//        }
+//        cout << endl;
+//    }
+
+
+    int line1[] = {1, 0, 1};//矩阵第一行
+    int line2[] = {0, 1, 0, 70};//矩阵第二行
+    int line3[] = {0, 0, 1};//矩阵第三行
+    string line4[] = {"12", "sdds", "", "55"};//矩阵第三行
+
+    //定义整型指针数组，并初始化
+    int *pLine[3] = {line1, line2, line3};
+
+    cout << "Matrix test:" << endl;
+    cout << "Matrix test:" << getArrayLenth(line1) << endl;
+    cout << "Matrix test:" << getArrayLenth(line4) << endl;
+
+    for (int i = 0; i < getArrayLenth(pLine); i++) {
+//        int *tem = pLine[i];
+//        cout << " tem:" << tem << endl;
         for (int j = 0; j < 3; j++) {
-            cin >> n[i][j];
-        }
-    }
-    cout << "初始矩阵" << endl;
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cout << n[i][j] << " ";
+            cout << pLine[i][j] << " ";
         }
         cout << endl;
     }
 
-    cout << "转换矩阵" << endl;
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < i; j++) {
-            swap(n[i][j], n[j][i]);
-        }
-
-    }
-
-    cout << "转换后：" << endl;
-
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            cout << n[i][j] << " ";
-        }
-        cout << endl;
-    }
     /***************************************指针结束********************************************/
     return 0;
 }

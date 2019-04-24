@@ -22,6 +22,14 @@ class PointerDemo {
 public:
     void initPointDemo();
 
+    //指针类型的函数
+    // 存储类型 数据类型 *函数名()
+    int *point1();
+
+    //指向函数的指针
+    // 存储类型 数据类型 （*函数指针名）()
+    int (*point2)();
+
 };
 
 

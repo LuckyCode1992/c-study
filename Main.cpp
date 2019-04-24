@@ -16,6 +16,12 @@ void swap(int &a, int &b) {
     b = temp;
 }
 
+//将实数x分成整数部分和小数部分，形参intpart,fracpart是指针
+void splitFloat(float x, int *intpart, float *fracpart) {
+    *intpart = static_cast<int>(x);
+    *fracpart = x - *intpart;
+}
+
 /**
  * 数组的长度获取方式
  * @tparam T
@@ -25,6 +31,30 @@ void swap(int &a, int &b) {
 template<class T>
 int getArrayLenth(T &n) {
     return sizeof(n) / sizeof(n[0]);
+}
+
+
+/**
+ * 指向函数的指针
+ * @param a
+ * @param b
+ * @param func
+ * @return
+ */
+int compute(int a, int b, int(*func)(int, int)) {
+    return func(a, b);
+}
+
+int max(int a, int b) {
+    return ((a > b) ? a : b);
+}
+
+int min(int a, int b) {
+    return a > b ? b : a;
+}
+
+int sum(int a, int b) {
+    return a + b;
 }
 
 int main() {
@@ -113,26 +143,40 @@ int main() {
 //    }
 
 
-    int line1[] = {1, 0, 1};//矩阵第一行
-    int line2[] = {0, 1, 0, 70};//矩阵第二行
-    int line3[] = {0, 0, 1};//矩阵第三行
-    string line4[] = {"12", "sdds", "", "55"};//矩阵第三行
+//    int line1[] = {1, 0, 1};//矩阵第一行
+//    int line2[] = {0, 1, 0, 70};//矩阵第二行
+//    int line3[] = {0, 0, 1};//矩阵第三行
+//    string line4[] = {"12", "sdds", "", "55"};//矩阵第三行
+//
+//    //定义整型指针数组，并初始化
+//    int *pLine[3] = {line1, line2, line3};
+//
+//    cout << "Matrix test:" << endl;
+//    cout << "Matrix test:" << getArrayLenth(line1) << endl;
+//    cout << "Matrix test:" << getArrayLenth(line4) << endl;
+//
+//    for (int i = 0; i < getArrayLenth(pLine); i++) {
+////        int *tem = pLine[i];
+////        cout << " tem:" << tem << endl;
+//        for (int j = 0; j < 3; j++) {
+//            cout << pLine[i][j] << " ";
+//        }
+//        cout << endl;
+//    }
 
-    //定义整型指针数组，并初始化
-    int *pLine[3] = {line1, line2, line3};
 
-    cout << "Matrix test:" << endl;
-    cout << "Matrix test:" << getArrayLenth(line1) << endl;
-    cout << "Matrix test:" << getArrayLenth(line4) << endl;
+//    for (int i = 0; i < 3; ++i) {
+//        float x, f;
+//        int n;
+//        cin >> x;
+//        splitFloat(x, &n, &f);
+//        cout << "Integer Part = " << n << " Fraction Part = " << f << endl;
+//    }
 
-    for (int i = 0; i < getArrayLenth(pLine); i++) {
-//        int *tem = pLine[i];
-//        cout << " tem:" << tem << endl;
-        for (int j = 0; j < 3; j++) {
-            cout << pLine[i][j] << " ";
-        }
-        cout << endl;
-    }
+    cout << "max = " << compute(4, 6, &max) << endl;
+    cout << "min = " << compute(4, 6, &min) << endl;
+    cout << "sum = " << compute(4, 6, &sum) << endl;
+
 
     /***************************************指针结束********************************************/
     return 0;

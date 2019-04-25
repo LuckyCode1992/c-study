@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <time.h>
+#include<vector>
 #include "array/ArrayDemo.h"
 #include "pointer/PointerDemo.h"
 #include "comprehensive_case/SavingsAccount.h"
@@ -55,6 +56,16 @@ int min(int a, int b) {
 
 int sum(int a, int b) {
     return a + b;
+}
+
+int average(const vector<int> &arr) {
+    int ave = 0;
+    int sum = 0;
+    for (int i = 0; i < arr.size(); ++i) {
+        sum += arr[i];
+    }
+    ave = sum / arr.size();
+    return ave;
 }
 
 int main() {
@@ -173,11 +184,81 @@ int main() {
 //        cout << "Integer Part = " << n << " Fraction Part = " << f << endl;
 //    }
 
-    cout << "max = " << compute(4, 6, &max) << endl;
-    cout << "min = " << compute(4, 6, &min) << endl;
-    cout << "sum = " << compute(4, 6, &sum) << endl;
+//    cout << "max = " << compute(4, 6, &max) << endl;
+//    cout << "min = " << compute(4, 6, &min) << endl;
+//    cout << "sum = " << compute(4, 6, &sum) << endl;
+
+//    int m1[] = {2, 4, 6};
+//    int *p1 = m1;
+//    cout << "p = " << p1 << endl;
+//    cout << "*p++ = " << *p1++ << endl;
+//    cout << "p = " << p1 << endl;
+//
+//
+//    int m2[] = {2, 4, 6};
+//    int *p2 = m2;
+//    cout << "p = " << p2 << endl;
+//    cout << "*(p++) = " << *(p2++) << endl;
+//    cout << "p = " << p2 << endl;
+//
+//
+//    int m3[] = {2, 4, 6};
+//    int *p3 = m3;
+//    cout << "p = " << p3 << endl;
+//    cout << "(*p)++ = " << (*p3)++ << endl;
+//    cout << "p = " << p3 << endl;
+//
+//    int m4[] = {2, 4, 6};
+//    int *p4 = m4;
+//    cout << "p = " << p4 << endl;
+//    cout << "*++p = " << *++p4 << endl;
+//    cout << "p = " << p4 << endl;
+//
+//
+//    int m5[] = {2, 4, 6};
+//    int *p5 = m5;
+//    cout << "p = " << p5 << endl;
+//    cout << "*(++p) = " << *(++p5) << endl;
+//    cout << "p = " << p5 << endl;
+//
+//
+//    int m6[] = {2, 4, 6};
+//    int *p6 = m6;
+//    cout << "p = " << p6 << endl;
+//    cout << "++*p = " << ++*p6 << endl;
+//    cout << "p = " << p6 << endl;
+//
+//
+//    int m7[] = {2, 4, 6};
+//    int *p7 = m7;
+//    cout << "p = " << p7 << endl;
+//    cout << "++(*p) = " << ++(*p7) << endl;
+//    cout << "p = " << p7 << endl;
 
 
+
+//动态分配内存和释放
+    PointerDemo *p = new PointerDemo();
+//做什么什么事情
+
+//删除对象 ，自动调用析构函数
+    delete p;
+//智能指针
+// unique_ptr:  不允许多个指针共享资源，可以用标准库中的move函数转移指针
+
+//shared_ptr： 多个指针共享资源
+
+//weak_ptr: 可以复制shared_ptr ，但其构造或者释放对资源不产生影响
+
+//vector
+    int n = 1;
+    cin >> n;
+    vector<int> arr(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> arr[i];
+    }
+    int ave = average(arr);
+    cout << "ave = " << ave;
     /***************************************指针结束********************************************/
     return 0;
 }

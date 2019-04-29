@@ -8,6 +8,9 @@
 #include "array/ArrayDemo.h"
 #include "pointer/PointerDemo.h"
 #include "comprehensive_case/SavingsAccount.h"
+#include "extends/A.h"
+#include "extends/B.h"
+#include "extends/ExtendsDemo.h"
 
 using namespace std;
 
@@ -66,6 +69,13 @@ int average(const vector<int> &arr) {
     }
     ave = sum / arr.size();
     return ave;
+}
+
+void display(A *p) {
+    p->display();
+}
+void display(A p) {
+    p.display();
 }
 
 int main() {
@@ -238,11 +248,11 @@ int main() {
 
 
 //动态分配内存和释放
-    PointerDemo *p = new PointerDemo();
+//    PointerDemo *p = new PointerDemo();
 //做什么什么事情
 
 //删除对象 ，自动调用析构函数
-    delete p;
+//    delete p;
 //智能指针
 // unique_ptr:  不允许多个指针共享资源，可以用标准库中的move函数转移指针
 
@@ -251,15 +261,34 @@ int main() {
 //weak_ptr: 可以复制shared_ptr ，但其构造或者释放对资源不产生影响
 
 //vector
-    int n = 1;
-    cin >> n;
-    vector<int> arr(n);
-    for (int i = 0; i < n; ++i) {
-        cin >> arr[i];
-    }
-    int ave = average(arr);
-    cout << "ave = " << ave;
+//    int n = 1;
+//    cin >> n;
+//    vector<int> arr(n);
+//    for (int i = 0; i < n; ++i) {
+//        cin >> arr[i];
+//    }
+//    int ave = average(arr);
+//    cout << "ave = " << ave;
     /***************************************指针结束********************************************/
+
+/****************************************继承，派生************************************/
+
+    A a;
+    B b;
+    ExtendsDemo extendsDemo;
+
+    a.display();
+    b.display();
+    extendsDemo.display();
+
+    display(&a);
+    display(&b);
+    display(&extendsDemo);
+
+    display(a);
+    display(b);
+    display(extendsDemo);
+
     return 0;
 }
 

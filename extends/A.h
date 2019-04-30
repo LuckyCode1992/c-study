@@ -9,8 +9,9 @@ using namespace std;
 #define C_STUDY_A_H
 
 class A {
+    //virtual 表示虚函数 告诉编译器，不要在编译阶段静态绑定，要运行阶段 动态绑定
 public:
-    void display() {
+    virtual void display() {
         cout << "A : display" << endl;
     }
 };

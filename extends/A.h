@@ -14,6 +14,10 @@ public:
     virtual void display() {
         cout << "A : display" << endl;
     }
+
+    virtual void test() final;
+
+    virtual void test2() &&;
 };
 
 #endif //C_STUDY_A_H

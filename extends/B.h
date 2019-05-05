@@ -14,6 +14,11 @@ public:
     void display() {
         cout << "B : display" << endl;
     }
+
+//    void test();
+    void test2() && override{
+
+    }
 };
 
 #endif //C_STUDY_B_H

@@ -11,6 +11,7 @@
 #include "extends/A.h"
 #include "extends/B.h"
 #include "extends/ExtendsDemo.h"
+#include "extends/Point.h"
 
 using namespace std;
 
@@ -74,9 +75,16 @@ int average(const vector<int> &arr) {
 void display(A *p) {
     p->display();
 }
+
 void display(A p) {
     p.display();
 }
+
+ostream &operator<<(ostream &o, Point &p) {
+    o << "(" << p._x << "," << p._y << ")";
+    return o;
+}
+
 
 int main() {
     cout << "hello" << endl;
@@ -273,21 +281,32 @@ int main() {
 
 /****************************************¼Ì³Ð£¬ÅÉÉú************************************/
 
-    A a;
-    B b;
-    ExtendsDemo extendsDemo;
+//    A a;
+//    B b;
+//    ExtendsDemo extendsDemo;
+//
+//    a.display();
+//    b.display();
+//    extendsDemo.display();
+//
+//    display(&a);
+//    display(&b);
+//    display(&extendsDemo);
+//
+//    display(a);
+//    display(b);
+//    display(extendsDemo);
 
-    a.display();
-    b.display();
-    extendsDemo.display();
+    Point p(1, 2);
+    cout << p << endl;
+    Point po = p++;
+    cout << po << endl;
+    cout << ++p << endl;
+    Point p2 = p--;
+    cout << p2 << endl;
+    cout << --p << endl;
+    cout << p << endl;
 
-    display(&a);
-    display(&b);
-    display(&extendsDemo);
-
-    display(a);
-    display(b);
-    display(extendsDemo);
 
     return 0;
 }

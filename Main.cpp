@@ -85,6 +85,14 @@ ostream &operator<<(ostream &o, Point &p) {
     return o;
 }
 
+/**
+ * Ä£°å
+ * @return
+ */
+template<class T>
+T abs(T x) {
+    return x < 0 ? -x : x;
+}
 
 int main() {
     cout << "hello" << endl;
